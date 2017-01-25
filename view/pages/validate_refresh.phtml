@@ -1,0 +1,38 @@
+    <section class="content-header">
+      <h1>Google Varification Code</h1>
+	</section>
+    
+    <section class="content-header">
+	<?php echo $this->CustomMessage()?>
+	</section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="row">
+        <div class="col-md-6">
+          <!-- general form elements -->
+          <div class="box box-primary">
+            <!-- /.box-header -->
+            <!-- form start -->
+            
+            <form role="form" action="<?=$this->url('backups/validate/savetoken')?>" method="post">
+              <div class="box-body">
+                <div class="form-group">
+                  <label for="googleVerificationCode">Varification Code</label>
+                  <input type="text" name="googleVerificationCode" class="form-control" id="googleVerificationCode" placeholder="Google Varification Code" value="">
+                </div>
+              </div>
+              <!-- /.box-body -->
+
+              <div class="box-footer">
+                <button type="submit" class="btn btn-primary">Varify Code</button>
+              </div>
+            </form>
+          </div>
+          <!-- /.box -->
+
+        </div>
+      </div>
+      <!-- /.row -->
+    </section>
+    <!-- /.content -->

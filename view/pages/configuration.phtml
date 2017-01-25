@@ -1,0 +1,51 @@
+    <section class="content-header">
+      <h1>Virtual Host Configuration</h1>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="row">
+        <div class="col-md-6">
+          <!-- general form elements -->
+          <div class="box box-primary">
+            <!-- /.box-header -->
+            <!-- form start -->
+            <form role="form" action="<?=$this->url('backups/configurationsave')?>" method="post">
+              <div class="box-body">
+                <div class="form-group">
+                  <label for="backupsgoogleparentdirectoryid">Google Parent Directory Id</label>
+                  <input type="text" name="configuration[backupsgoogleparentdirectoryid]" class="form-control" id="backupsgoogleparentdirectoryid" placeholder="Google Parent Directory Id" value="<?php if(isset($this->configuration["backupsgoogleparentdirectoryid"])) echo $this->configuration["backupsgoogleparentdirectoryid"]?>">
+                </div>
+                <div class="form-group">
+                  <label for="googleapplicationname">Google Application Name</label>
+                  <input type="text" name="configuration[googleapplicationname]" class="form-control" id="googleapplicationname" placeholder="Google Application Name" value="<?php if(isset($this->configuration["googleapplicationname"])) echo $this->configuration["googleapplicationname"]?>">
+                </div>
+                <div class="form-group">
+                  <label for="googlecredentialspath">Google Credentials Path</label>
+                  <input type="text" name="configuration[googlecredentialspath]" class="form-control" id="googlecredentialspath" placeholder="Google Credentials Path" value="<?php if(isset($this->configuration["googlecredentialspath"])) echo $this->configuration["googlecredentialspath"]?>">
+                  <span id="help-googleclientsecretpath" class="help-block-googleclientsecretpath">ex : .credentials/drive-php-quickstart.json</span>
+                </div>
+                <div class="form-group">
+                  <label for="googleclientsecretpath">Google Client Secret Path</label>
+                  <input type="text" name="configuration[googleclientsecretpath]" class="form-control" id="googleclientsecretpath" placeholder="Google Client Secret Path" value="<?php if(isset($this->configuration["googleclientsecretpath"])) echo $this->configuration["googleclientsecretpath"]?>">
+                  <span id="help-googleclientsecretpath" class="help-block-googleclientsecretpath">ex : /public/client_secret.json</span>
+                </div>
+                <div class="form-group">
+                  <label for="noofbackups">No of backups on this server</label>
+                  <input type="number" name="configuration[noofbackups]" class="form-control" id="noofbackups" placeholder="No of backups on this server" value="<?php if(isset($this->configuration["noofbackups"])) echo $this->configuration["noofbackups"]?>" required>
+                  <span id="help-noofbackups" class="help-block-noofbackups">ex : no of backups to keep in this server</span>
+                </div>
+              </div>
+              <!-- /.box-body -->
+
+              <div class="box-footer">
+                <button type="submit" class="btn btn-primary">Save Configuration</button>
+              </div>
+            </form>
+          </div>
+          <!-- /.box -->
+
+        </div>
+      </div>
+      <!-- /.row -->
+    </section>
+    <!-- /.content -->

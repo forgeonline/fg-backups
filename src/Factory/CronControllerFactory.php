@@ -15,13 +15,14 @@
 namespace FgBackups\Factory;
 
 use Interop\Container\ContainerInterface;
-use FgBackups\Controller\BackupController;
+use FgBackups\Controller\CronController;
 use Zend\ServiceManager\FactoryInterface;
 use Zend\ServiceManager\ServiceLocatorInterface;
-
+use Zend\Hydrator\ClassMethods;
+use FgCore\Model\Configuration;
 
 /**
- * BackupControllerFactory Class
+ * CronControllerFactory Class
  *
  * @category Factory
  * @package  FgBackups
@@ -29,14 +30,18 @@ use Zend\ServiceManager\ServiceLocatorInterface;
  * @license  GPL http://forge.co.nz
  * @link     http://forge.co.nz
  */
-class BackupControllerFactory implements FactoryInterface
+class CronControllerFactory implements FactoryInterface
 {
     public function __invoke(
         ContainerInterface $container,
         $requestedName,
         array $options = null)
     {
-        return new BackupController($container);
+        return new CronController(
+			$container,
+			new ClassMethods(false),
+			new Configuration()
+		);
     }
 	
 	/**
@@ -48,6 +53,6 @@ class BackupControllerFactory implements FactoryInterface
 	*/
 	public function createService(ServiceLocatorInterface $serviceLocator)
 	{
-		return $this($serviceLocator, 'FgBackups\Factory\BackupControllerFactory');
+		return $this($serviceLocator, 'FgBackups\Factory\CronControllerFactory');
      }
 }

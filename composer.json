@@ -3,15 +3,15 @@
     "description": "Forgeonline server backups status",
     "license": "BSD-3-Clause",
     "type": "forgeonline-forgezf",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "homepage": "http://forge.co.nz",
     "prefer-stable": true,
     "require": {
         "php": "^5.6 || ^7.0",
         "zendframework/skeleton-application": "*",
         "forgeonline/fg-installer":"*",
-		"google/apiclient":"*",
-		"forgeonline/fg-home":"*"
+		"forgeonline/fg-home":"*",
+		"forgeonline/fg-virtualhost":"*"
     },
     "autoload": {
         "psr-4": {
